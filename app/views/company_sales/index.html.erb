@@ -1,0 +1,37 @@
+<h1>Listing company_sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Buyer</th>
+      <th>Description</th>
+      <th>Unit price</th>
+      <th>Quantity</th>
+      <th>Address</th>
+      <th>Supplier</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_sales.each do |company_sale| %>
+      <tr>
+        <td><%= company_sale.buyer %></td>
+        <td><%= company_sale.description %></td>
+        <td><%= company_sale.unit_price %></td>
+        <td><%= company_sale.quantity %></td>
+        <td><%= company_sale.address %></td>
+        <td><%= company_sale.supplier %></td>
+        <td><%= link_to 'Show', company_sale %></td>
+        <td><%= link_to 'Edit', edit_company_sale_path(company_sale) %></td>
+        <td><%= link_to 'Destroy', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company sale', new_company_sale_path %>

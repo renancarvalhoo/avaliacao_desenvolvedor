@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Buyer:</strong>
+  <%= @company_sale.buyer %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @company_sale.description %>
+</p>
+
+<p>
+  <strong>Unit price:</strong>
+  <%= @company_sale.unit_price %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @company_sale.quantity %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company_sale.address %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @company_sale.supplier %>
+</p>
+
+<%= link_to 'Edit', edit_company_sale_path(@company_sale) %> |
+<%= link_to 'Back', company_sales_path %>
