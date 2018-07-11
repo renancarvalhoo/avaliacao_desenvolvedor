@@ -16,7 +16,7 @@
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1><a href="#">My Site</a></h1>
+          <h1><a href="#">Avaliação do Desenvolvedor</a></h1>
         </li>
       </ul>
       <section class="top-bar-section">
@@ -43,7 +43,7 @@
     <% end %>
     <div class="row spacer"></div>
     <div class="row">
-      <div class="large-12 columns">
+      <div class="<%= devise_controller? ? 'large-6 large-centered columns' : 'large-12 columns'%>">
         <%= yield %>
       </div>
     </div>

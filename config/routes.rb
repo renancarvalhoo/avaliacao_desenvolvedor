@@ -2,7 +2,7 @@ AvaliacaoDesenvolvedor::Application.routes.draw do
   resources :company_sales
 
   devise_for :users
-  root to: "users#index"
+  root to: "company_sales#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 #Common
 gem 'rails', '4.0.4'
+gem 'puma'
 
 #Database
 gem 'sqlite3'
