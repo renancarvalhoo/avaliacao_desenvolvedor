@@ -11,22 +11,31 @@
     </div>
   <% end %>
 
-  <table>
-    <tr>
-      <td>
-        <label for="dump_file">
-          Selecione o arquivo de venda para upload :
-        </label>
-      </td>
-      <td>
-        <%= f.file_field :file %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <%= f.submit 'Enviar' %>
-      </td>
-    </tr>
-  </table>
-
+  <div class="field">
+    <%= f.label :buyer %><br>
+    <%= f.text_field :buyer %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_price %><br>
+    <%= f.text_field :unit_price %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :supplier %><br>
+    <%= f.text_field :supplier %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

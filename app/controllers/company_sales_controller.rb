@@ -49,6 +49,9 @@ class CompanySalesController < ApplicationController
     end
   end
 
+  def import
+  end
+  
   def destroy
     @company_sale.destroy
     redirect_to :company_sales

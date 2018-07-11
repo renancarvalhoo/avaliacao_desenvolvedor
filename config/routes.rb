@@ -1,5 +1,9 @@
 AvaliacaoDesenvolvedor::Application.routes.draw do
-  resources :company_sales
+  resources :company_sales do
+    collection do
+      get :import
+    end
+  end
 
   devise_for :users
   root to: "company_sales#index"
