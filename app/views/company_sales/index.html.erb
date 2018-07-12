@@ -1,4 +1,4 @@
-<h1>Listing company_sales</h1>
+<h1>Listagem de Venda da Empresa</h1>
 
 <% if flash[:success] %>
   <div class="notification is-primary global-notification">
@@ -15,12 +15,12 @@
 <table>
   <thead>
     <tr>
-      <th>Buyer</th>
-      <th>Description</th>
-      <th>Unit price</th>
-      <th>Quantity</th>
-      <th>Address</th>
-      <th>Supplier</th>
+      <th><%= t("activerecord.attributes.company_sale.buyer") %></th>
+      <th><%= t("activerecord.attributes.company_sale.description") %></th>
+      <th><%= t("activerecord.attributes.company_sale.unit_price") %></th>
+      <th><%= t("activerecord.attributes.company_sale.quantity") %></th>
+      <th><%= t("activerecord.attributes.company_sale.address") %></th>
+      <th><%= t("activerecord.attributes.company_sale.supplier")  %></th>
       <th></th>
       <th></th>
       <th></th>
@@ -33,14 +33,25 @@
         <td><%= company_sale.buyer %></td>
         <td><%= company_sale.description %></td>
         <td><%= company_sale.unit_price %></td>
-        <td><%= company_sale.quantity %></td>
+        <td><%= "R$ #{company_sale.quantity}" %></td>
         <td><%= company_sale.address %></td>
         <td><%= company_sale.supplier %></td>
-        <td><%= link_to 'Show', company_sale %></td>
-        <td><%= link_to 'Edit', edit_company_sale_path(company_sale) %></td>
-        <td><%= link_to 'Destroy', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', company_sale %></td>
+        <td><%= link_to 'Editar', edit_company_sale_path(company_sale) %></td>
+        <td><%= link_to 'Excluir', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td></td>
+        <td><%= "R$ #{@company_sales.sum(:quantity)}"%></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
   </tbody>
 </table>
 

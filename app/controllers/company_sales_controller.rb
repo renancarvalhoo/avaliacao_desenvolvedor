@@ -4,21 +4,21 @@ class CompanySalesController < ApplicationController
   respond_to :html
 
   def index
-    @company_sales = CompanySale.all
+    @company_sales = current_user.company_sales
   end
 
   def show
   end
 
   def new
-    @company_sale = CompanySale.new
+    @company_sale = current_user.company_sale.new
   end
 
   def edit
   end
 
   def create
-    @company_sale = CompanySale.new(company_sale_params)
+    @company_sale = current_user.company_sale.new(company_sale_params)
 
     if @company_sale.save
       respond_to do |format|
@@ -51,7 +51,7 @@ class CompanySalesController < ApplicationController
 
   def import
     binding.pry
-    if Report::File.new(company_sale_import_params).parse
+    if Report::File.new(company_sale_import_params, current_user).parse
       flash[:success] = "Importação realizada com sucesso."
       redirect_to :company_sales
     else

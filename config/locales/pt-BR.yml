@@ -22,7 +22,7 @@ pt-BR:
       unlock_instructions:
         subject: "Instruções de desbloqueio"
     omniauth_callbacks:
-      failure: "Não foi possível autenticá-lo como %{kind} porque "%{reason}"."
+      failure: "Não foi possível autenticá-lo como %{kind} porque \"%{reason}\"."
       success: "Autenticado com sucesso com uma conta de %{kind}."
     passwords:
       no_token: "Você só pode acessar essa página através de um e-mail de troca de senha. Se já estiver acessando por um e-mail, verifique se a URL fornecida está completa."
@@ -46,7 +46,6 @@ pt-BR:
       send_instructions: "Dentro de minutos, você receberá um email com instruções para o desbloqueio da sua conta."
       send_paranoid_instructions: "Se sua conta existir, você receberá um e-mail com instruções para desbloqueá-la em alguns minutos."
       unlocked: "Sua conta foi desbloqueada com sucesso. Efetue login para continuar."
-
   errors:
     messages:
       already_confirmed: "já foi confirmado"
@@ -66,5 +65,5 @@ pt-BR:
         description: 'Descrição'
         unit_price: 'Preço Unitário'
         quantity: 'Quantidade'
-        address: 'Endereço'
+        address: "Endereço"
         supplier: 'Fornecedor'
