@@ -1,5 +1,17 @@
 <h1>Listing company_sales</h1>
 
+<% if flash[:success] %>
+  <div class="notification is-primary global-notification">
+    <p class="notice"><%= flash[:success] %></p>
+  </div>
+<% end %>
+
+<% if flash[:danger] %>
+  <div class="notification is-danger global-notification">
+    <p class="alert"><%= flash[:danger] %></p>
+  </div>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -35,4 +47,4 @@
 <br>
 
 <%= link_to 'Nova Venda', new_company_sale_path, class: 'button' %>
-<%= link_to 'Importar Arquivo', import_company_sales_path, class: 'button' %>
+<%= link_to 'Importar Arquivo', upload_company_sales_path, class: 'button' %>

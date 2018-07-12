@@ -57,3 +57,14 @@ pt-BR:
       not_saved:
         one: "Não foi possível salvar %{resource}: 1 erro"
         other: "Não foi possível salvar %{resource}: %{count} erros."
+  activerecord:
+    models:
+      company_sales: 'Vendas da Empresa'
+    attributes:
+      company_sale:
+        buyer: 'Comprador'
+        description: 'Descrição'
+        unit_price: 'Preço Unitário'
+        quantity: 'Quantidade'
+        address: 'Endereço'
+        supplier: 'Fornecedor'

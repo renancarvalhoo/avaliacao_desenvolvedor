@@ -1,7 +1,8 @@
 AvaliacaoDesenvolvedor::Application.routes.draw do
   resources :company_sales do
     collection do
-      get :import
+      post :import
+      get :upload
     end
   end
 

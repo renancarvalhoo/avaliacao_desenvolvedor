@@ -50,8 +50,19 @@ class CompanySalesController < ApplicationController
   end
 
   def import
+    binding.pry
+    if Report::File.new(company_sale_import_params).parse
+      flash[:success] = "Importação realizada com sucesso."
+      redirect_to :company_sales
+    else
+      flash[:danger] = "Não foi possível realizar a importação do arquivo."
+      redirect_to :company_sales
+    end
   end
-  
+
+  def upload
+  end
+
   def destroy
     @company_sale.destroy
     redirect_to :company_sales
@@ -65,5 +76,9 @@ class CompanySalesController < ApplicationController
 
   def company_sale_params
     params.require(:company_sale).permit(:buyer, :description, :unit_price, :quantity, :address, :supplier)
+  end
+
+  def company_sale_import_params
+    params.require(:company_sale).permit(:file)
   end
 end
