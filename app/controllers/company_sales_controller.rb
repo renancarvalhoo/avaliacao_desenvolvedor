@@ -50,9 +50,8 @@ class CompanySalesController < ApplicationController
   end
 
   def import
-    binding.pry
     if Report::File.new(company_sale_import_params, current_user).parse
-      flash[:success] = "Importação realizada com sucesso."
+      flash[:notice] = "Importação realizada com sucesso."
       redirect_to :company_sales
     else
       flash[:danger] = "Não foi possível realizar a importação do arquivo."

@@ -8,10 +8,11 @@ class Report::File
   end
 
   def parse
-    binding.pry
     CSV.foreach(@params["file"].tempfile, :headers => true, :col_sep => "\t") do |row|
       CompanySale.create(row.to_h.transform_keys {|key| headers[key]}.merge(user_id: @current_user.id))
     end
+
+    true
   end
 
   private

@@ -95,3 +95,7 @@ pt-BR:
         quantity: 'Quantidade'
         address: "Endereço"
         supplier: 'Fornecedor'
+      user:
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmar Senha'

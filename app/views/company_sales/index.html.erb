@@ -1,17 +1,5 @@
 <h1>Listagem de Venda da Empresa</h1>
 
-<% if flash[:success] %>
-  <div class="notification is-primary global-notification">
-    <p class="notice"><%= flash[:success] %></p>
-  </div>
-<% end %>
-
-<% if flash[:danger] %>
-  <div class="notification is-danger global-notification">
-    <p class="alert"><%= flash[:danger] %></p>
-  </div>
-<% end %>
-
 <table>
   <thead>
     <tr>
@@ -39,7 +27,7 @@
           <td><%= company_sale.supplier %></td>
           <td><%= link_to 'Ver', company_sale %></td>
           <td><%= link_to 'Editar', edit_company_sale_path(company_sale) %></td>
-          <td><%= link_to 'Excluir', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Excluir', company_sale, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
         </tr>
       <% end %>
       <tr>
