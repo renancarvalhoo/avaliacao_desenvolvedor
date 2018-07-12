@@ -28,19 +28,20 @@
   </thead>
 
   <tbody>
-    <% @company_sales.each do |company_sale| %>
-      <tr>
-        <td><%= company_sale.buyer %></td>
-        <td><%= company_sale.description %></td>
-        <td><%= company_sale.unit_price %></td>
-        <td><%= "R$ #{company_sale.quantity}" %></td>
-        <td><%= company_sale.address %></td>
-        <td><%= company_sale.supplier %></td>
-        <td><%= link_to 'Ver', company_sale %></td>
-        <td><%= link_to 'Editar', edit_company_sale_path(company_sale) %></td>
-        <td><%= link_to 'Excluir', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <% if @company_sales.any?%>
+      <% @company_sales.each do |company_sale| %>
+        <tr>
+          <td><%= company_sale.buyer %></td>
+          <td><%= company_sale.description %></td>
+          <td><%= company_sale.unit_price %></td>
+          <td><%= "R$ #{company_sale.quantity}" %></td>
+          <td><%= company_sale.address %></td>
+          <td><%= company_sale.supplier %></td>
+          <td><%= link_to 'Ver', company_sale %></td>
+          <td><%= link_to 'Editar', edit_company_sale_path(company_sale) %></td>
+          <td><%= link_to 'Excluir', company_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
       <tr>
         <td>Total</td>
         <td></td>
@@ -52,6 +53,11 @@
         <td></td>
         <td></td>
       </tr>
+    <%else%>
+      <tr>
+        <td colspan="9">Nenhuma venda cadastrada.</td>
+      </tr>
+    <%end%>
   </tbody>
 </table>
 
