@@ -11,14 +11,14 @@ class CompanySalesController < ApplicationController
   end
 
   def new
-    @company_sale = current_user.company_sale.new
+    @company_sale = current_user.company_sales.new
   end
 
   def edit
   end
 
   def create
-    @company_sale = current_user.company_sale.new(company_sale_params)
+    @company_sale = current_user.company_sales.new(company_sale_params)
 
     if @company_sale.save
       respond_to do |format|
